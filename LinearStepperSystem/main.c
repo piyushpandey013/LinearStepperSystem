@@ -42,12 +42,21 @@
 
 
 
+
+
+
 int main(void)
 {
+	// Initial setup
+	
+	// Set state machine to STOPPED state
+	volatile State machine = STOPPED;
+	
+	
     while(1)
     {
         
-		pgm_read_byte(&delayTable[0]);
+		// TODO: 
 		
 		
 		

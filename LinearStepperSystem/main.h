@@ -40,4 +40,32 @@ Calculated from a cubic ease-in formula with the following arguments: (0,0,0.25,
 unsigned char const delayTable[256] PROGMEM;
 
 
+
+/*
+	LOGIC SETUP
+Finite state machine
+
+The different states our state machine could be in.
+Remains in stopped state while listening to serial commands.
+When a command has been received, transitions into accelerating state.
+After delayTable has been traversed, transitions into running state where it will remain at top speed. 
+Running state could be skipped if total travel is shorter than acceleration + deceleration ramp.
+When the remaining steps are the same number as steps in delayTable, it transitions into deceleration state.
+Deceleration runs until delayTable has been traversed in reverse, and then goes into stopped state.
+
+*/
+typedef enum
+{
+	STOPPED,
+	ACCELERATING,
+	RUNNING,
+	DECELERATING
+} State;
+
+// Keeps track of machine state. Declared as volatile so it can be changed in an interrupt routine.
+volatile State machine;
+
+
+
+
 #endif /* MAIN_H_ */
