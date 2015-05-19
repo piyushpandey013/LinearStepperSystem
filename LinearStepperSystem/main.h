@@ -14,15 +14,15 @@
 /*
 	CONSTANTS
 */
-#define F_CPU					16000000UL;				// 16Mhz crystal (unsigned long)
+#define F_CPU                   16000000UL;             // 16Mhz crystal (unsigned long)
 
-#define TARGET_RADIUS			20						// Blind roll radius, in millimeters
-#define PI						3.14159
-#define TARGET_CIRCUMFERENCE	(2 * PI) * TARGET_RADIUS
-#define DEGREES_PER_STEP		1.8						// 1.8 is most common
-#define MICROSTEPPING			16						
-#define STEPS_IN_360			(360 / DEGREES_PER_STEP) * MICROSTEPPING
-#define MM_PER_STEP				TARGET_CIRCUMFERENCE / STEPS_IN_360
+#define TARGET_RADIUS           20                      // Target radius, in millimeters.
+#define PI                      3.14159
+#define TARGET_CIRCUMFERENCE    (2 * PI) * TARGET_RADIUS
+#define DEGREES_PER_STEP        1.8                     // TODO - add ability to set degrees per step in G-code
+#define MICROSTEPPING           16						// TODO - add ability to set micro stepping in G-code
+#define STEPS_IN_360            (360 / DEGREES_PER_STEP) * MICROSTEPPING
+#define MM_PER_STEP             TARGET_CIRCUMFERENCE / STEPS_IN_360
 
 
 /*
