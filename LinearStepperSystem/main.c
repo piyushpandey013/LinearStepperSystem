@@ -58,14 +58,14 @@ int main(void)
         
 		switch (machine)
 		{
-			case : STOPPED
+			case STOPPED:
 					// Machine in stopped state. 
 					// TODO: Listen to SPI communications for commands.
 					// TODO: When command received, calculate total steps and direction.
 			
 					break;
 					
-			case : ACCELERATING
+			case ACCELERATING:
 					// Machine accelerating.
 					// TODO: Run through delayTable array, using the values as milliseconds to delay between each step pulse.
 					// TODO: When reached end of array, go to running state.
@@ -73,20 +73,19 @@ int main(void)
 			
 					break;			
 					
-			case : RUNNING
+			case RUNNING:
 					// Machine is running at top speed.
 					// TODO: Maintain steps at lowest delay specified.
 			
 			
 					break;
 					
-			case : DECELERATING
+			case DECELERATING:
 					// Machine is decelerating.
 					// TODO: Run through delayTable in reverse. When reached end, go to stopped state.
 			
 					break;
 					
-			default:
 		}
 		
 		
