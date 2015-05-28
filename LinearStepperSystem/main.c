@@ -47,17 +47,51 @@
 
 int main(void)
 {
-	// Initial setup
+	// Setup
 	
-	// Set state machine to STOPPED state
+	// Set state machine initial state to STOPPED
 	volatile State machine = STOPPED;
 	
-	
+	// Infinite loop
     while(1)
     {
         
-		// TODO: 
+		switch (machine)
+		{
+			case : STOPPED
+					// Machine in stopped state. 
+					// TODO: Listen to SPI communications for commands.
+					// TODO: When command received, calculate total steps and direction.
+			
+					break;
+					
+			case : ACCELERATING
+					// Machine accelerating.
+					// TODO: Run through delayTable array, using the values as milliseconds to delay between each step pulse.
+					// TODO: When reached end of array, go to running state.
+			
+			
+					break;			
+					
+			case : RUNNING
+					// Machine is running at top speed.
+					// TODO: Maintain steps at lowest delay specified.
+			
+			
+					break;
+					
+			case : DECELERATING
+					// Machine is decelerating.
+					// TODO: Run through delayTable in reverse. When reached end, go to stopped state.
+			
+					break;
+					
+			default:
+		}
 		
+		
+		// TODO: 
+		pgm_read_byte(&delayTable[0]);
 		
 		
 		
