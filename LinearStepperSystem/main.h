@@ -37,8 +37,8 @@ Lookup table for acceleration/deceleration.
 Each value corresponds to delay between each step pulse, expressed in a 8 bit format. 
 Calculated from a cubic ease-in formula with the following arguments: (0,0,0.25,1)
 */
-#define MAX_DELAY_VALUES 256
-unsigned char const delayTable[MAX_DELAY_VALUES] PROGMEM;
+#define DELAY_MAX_VALUES 256
+unsigned char const delayTable[DELAY_MAX_VALUES] PROGMEM;
 
 
 
